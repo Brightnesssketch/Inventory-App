@@ -1,14 +1,7 @@
 const jwt = require('jsonwebtoken');
 const user = require("../models/users")
 
-const crypto = require('crypto');
-crypto.randomBytes(20, (err, randy) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(randy.toString("hex"));
-}
-})
+
 const config = process.env;
 
 const verifyToken = (req, res, next) => {
