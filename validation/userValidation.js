@@ -12,7 +12,7 @@ const validateUserSignup = (user) => {
     }
     const validateUserSignin = (user) => {
         const schema = Joi.object({
-            email: Joi.string().min(10).required().email() ,
+            email: Joi.string().required().email() ,
             password: Joi.string().min(10).required() 
         }).unknown();
             return schema.validate(user);
