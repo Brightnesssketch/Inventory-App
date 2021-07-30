@@ -14,7 +14,7 @@ const phoneSchema = new mongoose.Schema({
     type: Number,
     default: 0,
     validate(value) {
-      if (value < 0) throw new Error("Negative price aren't real.");}
+      if (value < 0) throw new Error("Negative prices aren't real.");}
     },
     desc: {type: String,
         required: true,
