@@ -151,7 +151,7 @@ const updateUser = async (req , res ) => {
           res.status(400).send(err)
       }
    }
-   const deleteUser = async (req , res) => {
+  const deleteUser = async (req , res) => {
         const userid = req.user._id
         const inputId = req.params.id
         if (userid !==  inputId) {return res.status(400).send("Can't delete user")}
