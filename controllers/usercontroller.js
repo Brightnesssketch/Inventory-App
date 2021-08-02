@@ -109,7 +109,7 @@ const resetPassword = async (req , res) => {
         const newPassword = req.body.newPassword
       const encryptedPassword = await bcrypt.hash(newPassword , 12);
       const user = await User.findOneAndUpdate({_id: inputId},
-          {password: encrytedPassword})
+          {password: encrytedPassword},  {new: true})
           await user.save();
       res.status(200).json({
           status: "Success" , 
@@ -133,7 +133,7 @@ const updateUser = async (req , res ) => {
      const avatar = req.file
           console.log(avatar)
           const user = await User.findOneAndUpdate({_id:iputId },
-              {firstName,lastName,  email,phoneNumber,avatar} )
+              {firstName,lastName,  email,phoneNumber,avatar},  {new: true} )
           const currentUser = await user.save();
           res.status(200).json({
               Status: "Success", 
