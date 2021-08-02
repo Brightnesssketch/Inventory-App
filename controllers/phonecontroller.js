@@ -77,7 +77,8 @@ const updatePhoneInfo = async (req , res) => {
         const  {name, desc, numinstock, price} = req.body
         const phone = await Phone.findOneAndUpdate({user: userid , _id: inputId},
             {name, desc, numinstock, price,  
-                phonePhoto:`http://localhost:3500/phonephoto/${phonePhoto}`}
+                phonePhoto:`http://localhost:3500/phonephoto/${phonePhoto}`},
+                {new: true},
             )
             if (!phone) return res.status(400).send("product not found")
             const currentPhone = await phone.save()
