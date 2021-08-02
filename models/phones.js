@@ -26,6 +26,7 @@ const phoneSchema = new mongoose.Schema({
         if (value < 0) {return "Out of stock"};
     }
   }, 
+  user: { type: mongoose.Types.objectid},
   url: {type: String
 },
 });
