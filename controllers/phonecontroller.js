@@ -16,7 +16,8 @@ const  {name, desc, numinstock, price, } = req.body
          desc, 
          numinstock,
           price,
-          phonePhoto:`http://localhost:3500/phonephoto/${phonePhoto}`
+          phonePhoto:`http://localhost:3500/phonephoto/${phonePhoto}`,
+          user:req.user._id
        }
   
        const phone = await Phone.create(newPhone)
